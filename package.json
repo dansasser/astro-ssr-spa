@@ -2,11 +2,12 @@
   "name": "astro-ssr-spa",
   "type": "module",
   "author": "Dan Sasser <contact@dansasser.me>",
-  "license": "GPL-3.0",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/dansasser/astro-ssr-spa"
   },
+  "homepage": "https://github.com/dansasser/astro-ssr-spa#readme",
   "keywords": [
     "astro",
     "ssr",
