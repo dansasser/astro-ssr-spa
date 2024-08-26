@@ -79,7 +79,7 @@ To get started with this template, you can use either Bun or npm. Choose the met
 4. **Run the Application**: Start the development environment with:
    -  With Bun:
       ```bash
-      bunx dev:start
+      bun dev:start
       ```
    -  With npm:
       ```bash
@@ -108,6 +108,7 @@ You can customize the logger by modifying its configuration file or directly in 
 ### Usage
 
 To use the custom logger, simply integrate it into your application’s request handling and error management processes. Here's a basic example of how to set it up:
+(This area need updated)
 
 ```javascript
 const customLogger = require('./path/to/customLogger')
@@ -163,6 +164,17 @@ For more detailed customization options and usage instructions, refer to the [Cu
 
 -  **`wait-on`**: This tool is used to wait for specific resources or conditions before proceeding with other tasks. In your setup, `wait-on` monitors a configuration file (`waiton.json`) to ensure that the server is up and running before starting the DevTunnel. This ensures that the tunnel is only established when the server is ready, avoiding potential connection issues.
 
+**Run it**:
+
+-  With Bun:
+   ```bash
+   bun serve:tunnel
+   ```
+-  With npm:
+   ```bash
+   npm serve:tunnel
+   ```
+
 Here’s how it works in your workflow:
 
 1. **Start the Server and DevTunnel**:
@@ -184,7 +196,7 @@ This setup ensures a smooth development experience by coordinating server startu
 
 Microsoft DevTunnel provides a secure, customizable tunnel to your local development environment. It’s particularly useful for exposing your local server to the internet, which is essential for tasks like remote testing and integration.
 
-For a detailed guide on installing and using Microsoft DevTunnel, you can refer to the official Microsoft DevTunnel documentation.
+For a detailed guide on installing and using Microsoft DevTunnel, you can refer to the official [Microsoft DevTunnel documentation](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/).
 
 Note: The dev tunnel listens for the server to start by way of a waiton.json configuration and then runs concurrently afterwards.
 
@@ -209,100 +221,148 @@ For detailed instructions and additional usage options, visit the [Microsoft Dev
 Inside of your project, you'll see the following folders and files:
 
 ```text
-/
-├── interfaces/
+\
+├── .astro\
+│   ├── icon.d.ts
+│   └── settings.json
+├── config\
+│   ├── devtunnel-fallback.js
+│   └── waiton.json
+├── db\
+│   ├── pages.json
+│   ├── social.json
+│   └── test.js
+├── .github\
+│   └── FUNDING.yml
+├── interfaces\
 │   ├── PageData.ts
 │   └── SocialData.ts
-├── lib/
+├── lib\
+│   ├── img\
+│   │   └── placeholder-image.png
 │   ├── DateTime.js
 │   ├── ExpressStarted.js
-│   ├── fa-icons.json
-│   ├── fa-v5-icons.json
 │   ├── HeaderPolicy.js
 │   ├── helper.js
-│   ├── icons.json
 │   ├── Logger.js
 │   └── PrettyConsole.js
-├── log/
+├── log\
 │   ├── csp.log
 │   ├── error.log
 │   └── traffic.log
-├── public/
-│   ├── assets/
-│   │   ├── fonts/
-│   │   |   └── FasterOne-eKem.ttf
-│   │   ├── img/
-│   │   |   └── picaLogo.png
-│   │   └── svg/
-│   │       └── *.svg
-│   ├── css/
-│   ├── js/
+├── public\
+│   ├── assets\
+│   │   ├── fonts\
+│   │   │   ├── FasterOne-eKem.ttf
+│   │   │   └── index.php
+│   │   └── img\
+│   │       ├── dan.png
+│   │       └── picaLogo.png
+│   ├── css\
+│   │   ├── fav5\
+│   │   │   ├── all.css
+│   │   │   ├── all.min.css
+│   │   │   ├── free.css
+│   │   │   └── free.min.css
+│   │   ├── all.css
+│   │   ├── all.min.css
+│   │   ├── flowbite.mini.css
+│   │   └── svg-with-js.min.css
+│   ├── js\
+│   │   ├── all.min.js
 │   │   ├── contact.js
-│   │   └── man.js
-│   ├── webfonts/
+│   │   └── main.js
 │   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   ├── forms/
-│   │   │   └──  BasicForm.astro
-│   │   ├── inputs/
-│   │   │   ├── buttons/
-│   │   │   │   ├──  DaseDaisyUI.astro
-│   │   │   │   └──  Theme_01.astro
-│   │   │   ├── fileUpload/
-│   │   │   │   └──  Theme_01.astro
-│   │   │   ├── selects/
-│   │   │   │   └──  Theme_01.astro
-│   │   │   ├── textarea/
-│   │   │   │   └──  Theme_01.astro
+├── scripts\
+│   └── image.converter.py
+├── src\
+│   ├── components\
+│   │   ├── forms\
+│   │   │   └── Basic.Form.astro
+│   │   ├── inputs\
+│   │   │   ├── buttons\
+│   │   │   │   ├── BaseDaisyUI.astro
+│   │   │   │   └── Theme_01.astro
+│   │   │   ├── fileUpload\
+│   │   │   │   └── Theme_01.astro
+│   │   │   ├── selects\
+│   │   │   │   └── Theme_01.astro
+│   │   │   ├── text\
+│   │   │   │   ├── Basic_01.astro
+│   │   │   │   ├── Basic_03.astro
+│   │   │   │   ├── Button.astro
+│   │   │   │   ├── Error.astro
+│   │   │   │   ├── Round.astro
+│   │   │   │   ├── Success.astro
+│   │   │   │   └── Theme_01.astro
+│   │   │   ├── textarea\
+│   │   │   │   └── Theme_01.astro
 │   │   │   ├── Basic.astro
 │   │   │   └── basic.input.jsx
-│   │   ├── navigation/
+│   │   ├── navigation\
 │   │   │   ├── Drawer-Nav.astro
+│   │   │   ├── Side-Child.astro
 │   │   │   ├── Side-Nav.astro
-│   │   │   ├── Side--Child.astro
-│   │   │   ├── Side-With-Child.astro
-│   │   │   └── Side-No-Child.astro
-│   │   └── Footer.astro
-│   │   └── Card.astro
-│   ├── functions/
+│   │   │   ├── Side-No-Child.astro
+│   │   │   └── Side-With-Child.astro
+│   │   ├── Card.astro
+│   │   ├── Footer.astro
+│   │   └── Product.card.astro
+│   ├── functions\
 │   │   ├── checkReferer.ts
-│   │   ├── CountryName.ts
-│   │   ├── CountryNames.ts
+│   │   ├── ContryNames.ts
 │   │   ├── GetData.ts
+│   │   ├── GetSiteData.ts
 │   │   ├── host-only-redirect.js
 │   │   ├── IDGen.ts
 │   │   ├── pageLoader.ts
 │   │   ├── PostData.ts
 │   │   └── URLFilter.ts
-│   ├── icons/
+│   ├── icons\
 │   │   └── *.svg
-│   ├── layouts/
+│   ├── layouts\
 │   │   └── Layout.astro
-│   ├── middleware/
+│   ├── middleware\
 │   │   ├── auth.ts
 │   │   ├── index.ts
 │   │   └── validate.ts
-│   ├── pages/
-│   │   ├── content/
+│   ├── pages\
+│   │   ├── content\
 │   │   │   ├── about.astro
+│   │   │   ├── apparel.astro
 │   │   │   ├── contact.astro
 │   │   │   ├── home.astro
 │   │   │   └── products.astro
+│   │   ├── icons.astro
 │   │   └── index.astro
-│   │   └── icons.astro
+│   ├── utils\
+│   │   ├── fa-icons.json
+│   │   ├── fa-v5-icons.json
+│   │   └── icons.json
 │   └── env.d.ts
-├── styles/
-│   └── global.css
-├── types/
+├── styles\
+│   ├── all.css
+│   ├── all-min.css
+│   ├── contactCustom.css
+│   ├── flowbite.mini.css
+│   ├── global.css
+│   └── svg-with-js.min.css
+├── types\
 │   └── SiteData.ts
+├── .vscode\
+│   ├── extensions.json
+│   └── settings.json
 ├── astro.config.mjs
+├── .env.example
+├── .gitignore
+├── LICENSE
 ├── package.json
+├── package-lock.json
+├── .prettierrc
 ├── README.md
 ├── server.mjs
 ├── tailwind.config.mjs
-├── tsconfig.json
-└── waiton.json
+└── tsconfig.json
 ```
 
 **Astro Project Structure**
@@ -389,17 +449,17 @@ The organization provided by **Astro** ensures modularity and maintainability, a
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                | Action                                           | npm Command               | bun Command            |
-| :--------------------- | :----------------------------------------------- | :------------------------ | :--------------------- |
-| Install dependencies   | Installs dependencies                            | `npm install`             | `bun install`          |
-| Start dev server       | Starts the Astro development server              | `npm run dev`             | `bunx dev`             |
-| Build and start server | Builds the project and starts the server         | `npm run dev:start`       | `bunx dev:start`       |
-| Start server only      | Starts the server without rebuilding             | `npm run start:server`    | `bunx start:server`    |
-| Serve with tunnel      | Starts the server and dev tunnel simultaneously  | `npm run serve:tunnel`    | `bunx serve:tunnel`    |
-| Build for production   | Build your production site to `./dist/`          | `npm run build`           | `bunx build`           |
-| Preview your build     | Preview your build locally, before deploying     | `npm run preview`         | `bunx preview`         |
-| Run Astro CLI commands | Run CLI commands like `astro add`, `astro check` | `npm run astro ...`       | `bunx astro ...`       |
-| Get Astro CLI help     | Get help using the Astro CLI                     | `npm run astro -- --help` | `bunx astro -- --help` |
+| Command                | Action                                           | npm Command               | bun Command           |
+| :--------------------- | :----------------------------------------------- | :------------------------ | :-------------------- |
+| Install dependencies   | Installs dependencies                            | `npm install`             | `bun install`         |
+| Start dev server       | Starts the Astro development server              | `npm run dev`             | `bun dev`             |
+| Build and start server | Builds the project and starts the server         | `npm run dev:start`       | `bun dev:start`       |
+| Start server only      | Starts the server without rebuilding             | `npm run start:server`    | `bun start:server`    |
+| Serve with tunnel      | Starts the server and dev tunnel simultaneously  | `npm run serve:tunnel`    | `bun serve:tunnel`    |
+| Build for production   | Build your production site to `./dist/`          | `npm run build`           | `bun build`           |
+| Preview your build     | Preview your build locally, before deploying     | `npm run preview`         | `bun preview`         |
+| Run Astro CLI commands | Run CLI commands like `astro add`, `astro check` | `npm run astro ...`       | `bun astro ...`       |
+| Get Astro CLI help     | Get help using the Astro CLI                     | `npm run astro -- --help` | `bun astro -- --help` |
 
 ## 👀 Why Choose This Template?
 
@@ -444,4 +504,4 @@ For more details, check out our [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 License. See the [LICENSE](LICENSE) file for details.
