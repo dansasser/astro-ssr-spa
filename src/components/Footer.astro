@@ -1,0 +1,94 @@
+---
+interface Props {
+   bgColor?: string
+   sticky?: boolean
+   social?: object
+}
+
+const { bgColor, sticky, social } = Astro.props
+---
+
+<footer
+   class:list={[
+      'relative',
+      'top-[75px]',
+      'grid',
+      'grid-cols-1',
+      'grid-auto-rows-auto',
+      'gap-y-1',
+      'text-center',
+      'w-full'
+   ]}
+>
+   <div class:list={[]}>City Packz Collectables</div>
+   <div>
+      <img
+         class='icon'
+         loading='lazy'
+         src='https://citypackz.com/images/icon/fb/25/true/'
+      />
+      <img
+         class='icon'
+         loading='lazy'
+         src='https://citypackz.com/images/icon/twitter/25/true/'
+      />
+      <img
+         class='icon'
+         loading='lazy'
+         src='https://citypackz.com/images/icon/tiktok/25/true/'
+      />
+      <img
+         class='icon'
+         loading='lazy'
+         src='https://citypackz.com/images/icon/insta/25/true/'
+      />
+   </div>
+   <div class:list={['text-[10px]', 'max-sm:text-[8px]']}>
+      Site By Sasser Development, LLC Copyright © 2023. All Rights Reserved
+   </div>
+   <div>
+      <hr />
+      <ul
+         class:list={[
+            'policies',
+            'mt-[10px]',
+            'mb-[10px]',
+            'p-1',
+            'grid',
+            'grid-cols-4',
+            'grid-rows-2',
+            'gap-y-3',
+            'list-none',
+            'text-[0.5em]',
+            'max-sm:grid-row-3',
+            'max-sm:grid-cols-3'
+         ]}
+      >
+         <li>
+            <a href='https://citypackz.com/privacy-policy/'>PRIVACY POLICY</a>
+         </li>
+         <li>
+            <a href='https://citypackz.com/cookie-policy/'>COOKIE POLICY</a>
+         </li>
+         <li>
+            <a href='https://citypackz.com/return-policy/'>RETURN POLICY</a>
+         </li>
+         <li>
+            <a href='https://citypackz.com/shipping-policy/'>SHIPPING POLICY</a>
+         </li>
+         <li>
+            <a href='https://citypackz.com/terms-of-use/'>TERMS OF USE</a>
+         </li>
+         <li>
+            <a href='https://citypackz.com/dsar/'>DSAR FORM</a>
+         </li>
+         <li class:list={['max-sm:col-span-3']}>
+            <a
+               href='#'
+               id='termly-consent-preferences'
+               >PREFERENCES</a
+            >
+         </li>
+      </ul>
+   </div>
+</footer>

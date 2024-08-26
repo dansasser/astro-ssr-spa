@@ -1,0 +1,17 @@
+---
+import { getPage } from "../../functions/checkReferer.ts";
+
+const page = getPage(Astro);
+---
+
+<html>
+   <head>
+      <title>{page}</title>
+   </head>
+   <body>
+      <section id="content">
+         <h2>Hello this is the {page} page.</h2>
+         <h2></h2>
+      </section>
+   </body>
+</html>

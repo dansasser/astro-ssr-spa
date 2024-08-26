@@ -1,0 +1,64 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from "astro:assets";
+import placeholder from "../../../../lib/img/placeholder-image.png";
+interface Props {
+  label: string;
+  theme?;
+  source?: string;
+}
+const { label, theme, source} = Astro.props; 
+
+
+--- 
+
+<div class="p-2">
+  <div
+    class="relative mb-3 w-full min-w-[200px]"
+    data-te-input-wrapper-init
+  >
+    <input
+      type="file"
+      class:list={['hidden']}
+      accept="image/jpeg, image/png, image/jpg"
+      onchange="loadFile(this.id)"
+      id={label.replace(' ', '_')}
+      name={label.replace(' ', '_')}
+    />
+    <label for={label.replace(' ', '_')} class:list={['relative']}>
+      <span
+        class:list={[
+          'left-[10px]',
+          '-top-2',
+          'nowrap',
+          'select-none',
+          'text-xs',
+          'font-bold',
+          'text-gray-400',
+          'text-left',
+        ]}>{label}</span
+      ><br />
+      <Image
+        id={label.replace(' ', '_') + '_img'} alt='Product Image'
+        src={source ? `https://citypackz.com/assets/img/products/${source}.png` : placeholder.src}
+        width={placeholder.width}
+        height={placeholder.height}
+        class:list={[
+          'border',
+          'border-gray-300',
+          'border-solid',
+          'rounded-[7px]',
+        ]}
+      />
+    </label>
+  </div>
+</div>
+
+<script is:inline>
+/* define:vars={{label: label}} */
+function loadFile(i) {
+  const image = document.getElementById(`${i}_img`);
+    const file = document.getElementById(i);
+    image.src = URL.createObjectURL(file.files[0]);
+  }
+</script>

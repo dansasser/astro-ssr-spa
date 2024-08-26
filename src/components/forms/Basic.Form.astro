@@ -1,0 +1,133 @@
+---
+interface Props {
+   bgColor?: string
+   borderColor?: string
+   shawdow: boolean
+   name: string
+   theme: { inputList: []; labelList: [] }
+   submit: string
+   hxTarget?: string
+   hxSelect?: string
+   hxSwap?: 'outerHTML' | 'innerHTML'
+   inputs?: Array<{
+      name: string
+      type: astroHTML.JSX.HTMLInputTypeAttribute
+      label: string
+      value?: string
+   }>
+   options?: Array<{
+      name: string
+      optionList: [
+         {
+            text: string
+            value: string
+         }
+      ]
+   }>
+   textAreas?: [
+      {
+         name: string
+         label: string
+         value?: string
+      }
+   ]
+}
+const {
+   name,
+   options,
+   submit,
+   textAreas,
+   inputs,
+   theme,
+   hxTarget,
+   hxSelect,
+   hxSwap,
+   bgColor,
+   borderColor,
+   shawdow
+} = Astro.props
+const setHxSwap = hxSwap ? hxSwap : 'outerHTML'
+const setHxSelect = hxSelect ? `#${hxSelect}` : `#${name}`
+const setHxTarget = hxTarget ? `#${hxTarget}` : `#${name}`
+import 'dotenv/config'
+import Input from '../inputs/text/Theme_01.astro'
+import Button from '../inputs/buttons/Theme_01.astro'
+import Select from '../inputs/selects/Theme_01.astro'
+import Textarea from '../inputs/textarea/Theme_01.astro'
+---
+
+<form
+   id={name}
+   name={name}
+   hx-encoding='multipart/form-data'
+   hx-post={submit}
+   hx-target={setHxTarget}
+   hx-select={setHxSelect}
+   hx-swap={setHxSwap}
+>
+   <div
+      role='presentation'
+      id={`${name}Box`}
+      class:list={[
+         'formBox',
+         shawdow ? 'shadow-lg' : '',
+         'rounded-lg',
+         'border',
+         borderColor,
+         bgColor,
+         'p-4',
+         'transition-all'
+      ]}
+   >
+      <div
+         id='actionMessage'
+         class='actionMessage hidden'
+      >
+         Action
+      </div>
+
+      <div class='formElementBox'>
+         {
+            inputs?.map((input) => {
+               return (
+                  <Input
+                     label={input.label}
+                     name={input.name}
+                     type={input.type}
+                     theme={theme}
+                     value={input.value}
+                  />
+               )
+            })
+         }
+         {
+            options?.map((option) => {
+               return (
+                  <Select
+                     label={option.name}
+                     theme={theme}
+                     options={option.optionList}
+                  />
+               )
+            })
+         }
+         {
+            textAreas?.map((textArea) => {
+               return (
+                  <Textarea
+                     label={textArea.label}
+                     name={textArea.name}
+                     theme={theme}
+                     value={textArea.value}
+                  />
+               )
+            })
+         }
+      </div>
+
+      <Button
+         label='SUBMIT'
+         type='submit'
+      />
+   </div>
+</form>

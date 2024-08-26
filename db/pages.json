@@ -1,0 +1,125 @@
+{
+    "pages": [
+        {
+            "id": 1,
+            "name": "home",
+            "url": "/home",
+            "title": "Home",
+            "description": "CityPackz is a collectibles business that specializes in selling game cards and Hot Wheels. We offer a wide selection of game cards from popular trading card games, as well as a variety of Hot Wheels cars and track sets. Whether you're a collector or just looking for the perfect gift, CityPackz has something for everyone. Explore our collection and start building your own unique collection today!",
+            "keywords": "CityPackz, local businesses, platform, products, services, customers, discover, support",
+            "parent": "none",
+            "hasChildren": false,
+            "icon": "fad fa-home-lg fa-fw"
+        },
+        {
+            "id": 2,
+            "name": "products",
+            "url": "/products",
+            "title": "Our Products",
+            "description": "CityPackz offers a variety of products to meet the needs of local businesses. From promotional items to marketing materials, we provide high-quality solutions that help businesses stand out and attract customers.",
+            "keywords": "CityPackz, products, local businesses, promotional items, marketing materials, high-quality solutions, stand out, attract customers",
+            "parent": "none",
+            "hasChildren": true,
+            "icon": "fad fa-store fa-fw"
+        },
+        {
+            "id": 3,
+            "name": "about",
+            "url": "/about",
+            "title": "About Us",
+            "description": "At CityPackz, our mission is to provide a platform for local businesses to connect with customers and grow. We are passionate about supporting the community and fostering engagement between businesses and customers. Our goal is to offer high-quality products and services that help businesses stand out and attract customers. With CityPackz, businesses can discover new opportunities and build meaningful relationships within the ecosystem. Join us in creating a thriving community of local businesses and customers!",
+            "keywords": "CityPackz, team, passionate, local businesses, community engagement, mission, ecosystem, connect, grow",
+            "parent": "none",
+            "hasChildren": true,
+            "icon": "far fa-city fa-fw"
+        },
+        {
+            "id": 4,
+            "name": "contact",
+            "url": "/contact",
+            "title": "Contact Us",
+            "description": "Have a question or need assistance? Contact CityPackz today and our team will be happy to help. Whether you're a business owner or a customer, we're here to support you every step of the way.",
+            "keywords": "CityPackz, contact, question, assistance, team, business owner, customer, support",
+            "parent": "none",
+            "hasChildren": false,
+            "icon": "fa-solid fa-newspaper fa-fw"
+        },
+        {
+            "id": 5,
+            "name": "all_products",
+            "url": "/products",
+            "title": "All Products",
+            "description": "Explore the world of All Products and discover the latest Pokémon games, trading cards, and merchandise.",
+            "keywords": "Pokémon, games, trading cards, merchandise",
+            "parent": "products",
+            "hasChildren": false,
+            "icon": "fa-fw"
+        },
+        {
+            "id": 6,
+            "name": "pokemon",
+            "url": "pokemon",
+            "title": "Pokémon",
+            "description": "Explore the world of Pokémon and catch 'em all! Discover the latest Pokémon games, trading cards, and merchandise.",
+            "keywords": "Pokémon, games, trading cards, merchandise",
+            "parent": "products",
+            "hasChildren": false,
+            "icon": "fa-fw"
+        },
+        {
+            "id": 7,
+            "name": "hot_wheels",
+            "url": "hot-wheels",
+            "title": "Hot Wheels",
+            "description": "Get ready for high-speed racing action with Hot Wheels! Check out our collection of die-cast cars and track sets.",
+            "keywords": "Hot Wheels, racing, die-cast cars, track sets",
+            "parent": "products",
+            "hasChildren": false,
+            "icon": "fa-fw"
+        },
+        {
+            "id": 8,
+            "name": "comics",
+            "url": "comics",
+            "title": "Comics",
+            "description": "Immerse yourself in the world of comics! Explore a wide range of comic books, graphic novels, and manga.",
+            "keywords": "Comics, comic books, graphic novels, manga",
+            "parent": "products",
+            "hasChildren": false,
+            "icon": "fa-fw"
+        },
+        {
+            "id": 9,
+            "name": "apparel",
+            "url": "apparel",
+            "title": "Apparel",
+            "description": "Express your style with our trendy apparel collection! Discover the latest fashion trends and accessories.",
+            "keywords": "Apparel, fashion, trends, accessories",
+            "parent": "products",
+            "hasChildren": false,
+            "icon": "fa-fw"
+        },
+        {
+            "id": 10,
+            "name": "icons",
+            "url": "/icons",
+            "title": "Icons",
+            "description": "Express your style with our trendy apparel collection! Discover the latest fashion trends and accessories.",
+            "keywords": "Apparel, fashion, trends, accessories",
+            "parent": "none",
+            "hasChildren": false,
+            "icon": "fa-solid fa-ghost fa-fw"
+        },
+        {
+            "id": 11,
+            "name": "all_about",
+            "url": "/about",
+            "title": "All About Us",
+            "description": "All about us",
+            "keywords": "all about us",
+            "parent": "about",
+            "hasChildren": false,
+            "icon": "fa-solid fa-ghost fa-fw"
+        }
+    ]
+}

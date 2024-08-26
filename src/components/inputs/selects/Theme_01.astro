@@ -1,0 +1,67 @@
+---
+interface Props {
+   label: string
+   options: [
+      {
+         text: string
+         value: string
+      },
+   ]
+   theme: { inputList: []; labelList: [] }
+   selected?: string
+   disabled?: string
+}
+const { label, options, theme, selected, disabled } = Astro.props
+const selectedValue: string = selected || '0'
+const disabledValue: string = disabled || '0'
+function optionSelector(myValue: string, selectedValue: string): boolean {
+   if (myValue === selectedValue) {
+      return true
+   } else {
+      return false
+   }
+}
+function optiondisabler(myValue: string, selectedValue: string): boolean {
+   if (myValue === selectedValue) {
+      return true
+   } else {
+      return false
+   }
+}
+---
+
+<div class='p-2 text-center'>
+   <div class='relative h-10 w-full min-w-[200px]'>
+      <select
+         class:list={theme.inputList}
+         name={label.replace(' ', '_')}
+         id={label.replace(' ', '_')}
+         form='productForm'
+      >
+         <optgroup label='Please Select'>
+            <option
+               class='disabled'
+               value='0'
+               disabled={optiondisabler('0', disabledValue)}
+               selected={optionSelector('0', selectedValue)}
+               >.......</option
+            >
+            {
+               options.map((option) => (
+                  <option
+                     value={option.value}
+                     disabled={optiondisabler(option.value, disabledValue)}
+                     selected={optionSelector(option.value, selectedValue)}>
+                     {option.text}
+                  </option>
+               ))
+            }
+         </optgroup>
+      </select>
+      <label
+         for={label.replace(' ', '_')}
+         class:list={theme.labelList}
+         >{label.toUpperCase()}
+      </label>
+   </div>
+</div>

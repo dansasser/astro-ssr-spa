@@ -1,0 +1,32 @@
+---
+interface Props {
+   title: string;
+   url?: string;
+   icon: string;
+   name?: string;
+}
+
+const { title, url, icon, name } = Astro.props;
+const hyperscript = `on click toggle .hidden on .dropdown-trigger then toggle .hidden on .angleDown then toggle .hidden on .angleUp`;
+---
+
+<li>
+   <label
+      for="sideNav"
+      aria-label="close sidebar"
+      class="btn ms-1 bg-transparent flex items-center w-full p-2 transition duration-75 rounded-lg group border-none"
+      hx-get={`/content${url}`}
+      hx-select="#content"
+      hx-trigger="click"
+      hx-target="main"
+      hx-swap="innerHTML"
+      hx-push-url={url?.replace("/home", "/")}
+      data-script={hyperscript}
+   >
+      <i class={icon}></i>
+      <span
+         class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap"
+         >{title}</span
+      >
+   </label>
+</li>

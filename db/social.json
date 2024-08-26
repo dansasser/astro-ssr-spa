@@ -1,0 +1,172 @@
+{
+    "accounts": [
+        {
+            "id": 1,
+            "name": "x-twitter",
+            "url": "https://twitter.com/CityPackz",
+            "title": "Twitter",
+            "icon": "fa-brands fa-x-twitter fa-fw"
+        },
+        {
+            "id": 2,
+            "name": "facebook",
+            "url": "https://www.facebook.com/CityPackz",
+            "title": "Facebook",
+            "icon": "fa-brands fa-facebook fa-fw"
+        },
+        {
+            "id": 3,
+            "name": "instagram",
+            "url": "https://www.instagram.com/CityPackz",
+            "title": "Instagram",
+            "icon": "fa-brands fa-instagram fa-fw"
+        },
+        {
+            "id": 4,
+            "name": "linkedin",
+            "url": "https://www.linkedin.com/company/CityPackz",
+            "title": "LinkedIn",
+            "icon": "fa-brands fa-linkedin-in fa-fw"
+        },
+        {
+            "id": 5,
+            "name": "youtube",
+            "url": "https://www.youtube.com/CityPackz",
+            "title": "YouTube",
+            "icon": "fa-brands fa-youtube fa-fw"
+        },
+        {
+            "id": 6,
+            "name": "tiktok",
+            "url": "https://www.tiktok.com/@CityPackz",
+            "title": "TikTok",
+            "icon": "fa-brands fa-tiktok fa-fw"
+        },
+        {
+            "id": 7,
+            "name": "pinterest",
+            "url": "https://www.pinterest.com/CityPackz",
+            "title": "Pinterest",
+            "icon": "fa-brands fa-pinterest-p fa-fw"
+        },
+        {
+            "id": 8,
+            "name": "snapchat",
+            "url": "https://www.snapchat.com/add/CityPackz",
+            "title": "Snapchat",
+            "icon": "fa-brands fa-snapchat fa-fw"
+        },
+        {
+            "id": 9,
+            "name": "reddit-alien",
+            "url": "https://www.reddit.com/user/CityPackz",
+            "title": "Reddit",
+            "icon": "fa fa-reddit-alien fa-fw"
+        },
+        {
+            "id": 10,
+            "name": "tumblr",
+            "url": "https://CityPackz.tumblr.com",
+            "title": "Tumblr",
+            "icon": "fa fa-tumblr fa-fw"
+        },
+        {
+            "id": 11,
+            "name": "flickr",
+            "url": "https://www.flickr.com/photos/CityPackz",
+            "title": "Flickr",
+            "icon": "fa fa-flickr fa-fw"
+        },
+        {
+            "id": 12,
+            "name": "whatsapp",
+            "url": "https://wa.me/15555555555",
+            "title": "WhatsApp",
+            "icon": "fa fa-whatsapp fa-fw"
+        },
+        {
+            "id": 13,
+            "name": "telegram",
+            "url": "https://t.me/CityPackz",
+            "title": "Telegram",
+            "icon": "fa fa-telegram fa-fw"
+        },
+        {
+            "id": 14,
+            "name": "signal-messenger",
+            "url": "https://signal.org/CityPackz",
+            "title": "Signal",
+            "icon": "fa fa-signal-messenger fa-fw"
+        },
+        {
+            "id": 15,
+            "name": "discord",
+            "url": "https://discord.com/CityPackz",
+            "title": "Discord",
+            "icon": "fa fa-discord fa-fw"
+        },
+        {
+            "id": 16,
+            "name": "slack",
+            "url": "https://slack.com/CityPackz",
+            "title": "Slack",
+            "icon": "fa fa-slack fa-fw"
+        },
+        {
+            "id": 17,
+            "name": "skype",
+            "url": "https://join.skype.com/CityPackz",
+            "title": "Skype",
+            "icon": "fa fa-skype fa-fw"
+        },
+        {
+            "id": 18,
+            "name": "linux",
+            "url": "https://zoom.us/CityPackz",
+            "title": "Zoom",
+            "icon": " fad fa-camcorder"
+        },
+        {
+            "id": 19,
+            "name": "facebook-messenger",
+            "url": "https://m.me/CityPackz",
+            "title": "Messenger",
+            "icon": "fa fa-facebook-messenger fa-fw"
+        },
+        {
+            "id": 20,
+            "name": "viber",
+            "url": "https://viber.com/CityPackz",
+            "title": "Viber",
+            "icon": "fa fa-viber fa-fw"
+        },
+        {
+            "id": 21,
+            "name": "line",
+            "url": "https://line.me/CityPackz",
+            "title": "Line",
+            "icon": "fa fa-line fa-fw"
+        },
+        {
+            "id": 22,
+            "name": "mdi:wechat",
+            "url": "https://wechat.com/CityPackz",
+            "title": "WeChat",
+            "icon": "fa fa-w fa-fw"
+        },
+        {
+            "id": 23,
+            "name": "k",
+            "url": "https://kik.com/CityPackz",
+            "title": "Kik",
+            "icon": "fa fa-k fa-fw"
+        },
+        {
+            "id": 24,
+            "name": "telegram",
+            "url": "https://t.me/CityPackz",
+            "title": "Telegram",
+            "icon": "fa fa-telegram fa-fw"
+        }
+    ]
+}

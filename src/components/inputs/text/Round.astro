@@ -1,0 +1,71 @@
+---
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<style>
+  .r1_p1 {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    width: 90%;
+    height: 25px;
+    min-width: 200px;
+    max-width: 400px;
+    border-radius: 15px;
+    outline: 0;
+    border: 0.5px solid rgb(172, 169, 169);
+    text-indent: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    background-color: #ffffff;
+  }
+
+  .r1_p1:focus {
+    background-color: rgba(81, 203, 238, 0.2);
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid rgba(81, 203, 238, 1);
+  }
+
+  .input-xsm {
+    width: 20% !important;
+    min-width: 65px !important;
+    max-width: 125px !important;
+  }
+
+  .input-sm {
+    width: 25% !important;
+    min-width: 65px !important;
+    max-width: 125px !important;
+  }
+
+  .input-med {
+    width: 32% !important;
+    min-width: 65px !important;
+    max-width: 125px !important;
+  }
+
+  .badMsgB:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: red;
+  }
+
+  .badMsgB::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: red;
+  }
+</style>
+
+<input
+  type="text"
+  placeholder={label}
+  class="r1_p1 input-full let-space-med input-trans"
+/>

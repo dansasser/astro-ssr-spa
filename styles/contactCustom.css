@@ -1,0 +1,51 @@
+input[type='text'],
+select,
+input[type='email'],
+input[type='password'],
+input[type='tel'],
+input[type='date'],
+textarea,
+input[type='phone'],
+input[type='number'] {
+   transition: all 0.3s ease-in-out;
+   padding: 3px 0px 3px 3px;
+   margin: 5px 1px 3px 0px;
+   width: 90%;
+   height: 25px;
+   min-width: 200px;
+   max-width: 600px;
+   border-radius: 15px;
+   outline: 0;
+   border: 0.5px solid rgb(172, 169, 169);
+   text-indent: 10px;
+   font-weight: 500;
+   letter-spacing: 0.25em;
+   background-color: #ffffff;
+}
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='date']:focus,
+input[type='tel']:focus,
+input[type='number']:focus,
+input[type='password']:focus,
+input[type='phone']:focus,
+textarea:focus {
+   background-color: rgba(81, 203, 238, 0.2);
+   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+   padding: 3px 0px 3px 3px;
+   margin: 5px 1px 3px 0px;
+   border: 1px solid rgba(81, 203, 238, 1);
+}
+button {
+   height: 35px;
+   max-width: 400px;
+   border-radius: 15px;
+   padding: 3px 0px 3px 3px;
+   border: 0.5px solid rgb(172, 169, 169);
+   cursor: pointer;
+   color: rgba(255, 255, 255, 1);
+   font-weight: 600;
+}
+button:focus {
+   background-color: rgba(18, 136, 233, 1);
+}

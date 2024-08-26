@@ -1,0 +1,24 @@
+---
+interface Props {
+  label: string;
+  colorORstate?: string;
+  outline: boolean;
+  size?: [string,string,string,string];
+  wideORblock?: string;
+  spinner: boolean;
+
+}
+const { label, colorORstate, outline, size, wideORblock, spinner } = Astro.props;
+const isOutline: string | null = outline === true ? "btn-outline" : null;
+const isSpinner: string  = spinner === true ? '<span class="loading loading-spinner black"></span>' : ''
+const Size = size ? size : ['btn-xs','sm:btn-sm','md:btn-md','lg:btn-lg']
+---
+
+<button class:list={["btn",
+                    colorORstate,
+                    isOutline,
+                    wideORblock,
+                    ]} >
+                    <Fragment set:html={isSpinner} />
+                    {label}
+</button>

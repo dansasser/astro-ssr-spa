@@ -1,0 +1,63 @@
+---
+import Card from '../../components/Product.card.astro'
+import { getPage } from '../../functions/checkReferer.ts'
+
+const page = getPage(Astro)
+const themeList = `["dark","charmander"]`
+const dataScript = `
+                  on click
+                  set x to 0 then                  
+                  if @data-count is less than 1 increment @data-count
+                  otherwise set @data-count to 0 end
+                  set myList to ${themeList} 
+                  for x in myList index i
+                  if @data-count is i
+                  set @data-theme of <html /> to x then
+                  end 
+                  `
+---
+
+<html>
+   <head>
+      {/* <title>Welcome {page}</title>*/}
+   </head>
+
+   <section id='content'>
+      <h2>Hello this is the {page} page.</h2>
+      <div
+         id='clickMe'
+         class='btn rounded-3xl btn-primary'
+         data-count='1'
+         data-script={dataScript}
+      >
+         click me
+      </div>
+      <div
+         id='clickMeTwice'
+         class='clickMeTwice btn btn-secondary rounded-3xl'
+      >
+         click me
+      </div>
+      <p
+         class:list={[
+            'themeName',
+            'text-xs',
+            'font-semibold',
+            'tracking-tight',
+            'p-3',
+            'mb-10'
+         ]}
+      >
+         This is a test
+      </p>
+      <Card
+         id='poky'
+         title='This is my Card'
+         desc='this is the body of the card'
+         stars={5}
+         price={5.99}
+      />
+   </section>
+
+
+</html>

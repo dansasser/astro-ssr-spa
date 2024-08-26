@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+:root {
+   --bs-blue: #0d6efd;
+   --char-yellow-1: #fdce10;
+   --char-yellow-2: #eedd7a;
+   --char-orange-1: #e14318;
+   --char-orange-2: #ee8328;
+   --char-blue-1: #207394;
+   --my-black-1: rgba(0, 0, 0, 1);
+}
+@font-face {
+   font-family: speedy;
+   src: url(/assets/fonts/FasterOne-eKem.ttf);
+   font-display: swap;
+}
+body {
+   font-family: 'Poppins', sans-serif;
+   font-weight: 400;
+   margin: 0;
+   font-display: swap;
+}
+.navbar {
+   position: fixed;
+   z-index: 10;
+   left: 0;
+   top: 0;
+   min-width: 300px;
+   box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+iframe {
+   margin: 0 auto;
+   min-width: 300px;
+   max-width: 600px;
+}
+.small {
+   zoom: 25%;
+}
+.normal {
+   zoom: normal;
+}
+.big {
+   zoom: 2.5;
+}
+.fa.fa-twitter {
+   font-family: sans-serif;
+}
+.fa.fa-twitter::before {
+   content: '𝕏';
+   font-size: 1.2em;
+}
+.char-blue {
+   background-color: var(--char-blue-1);
+}
+[data-theme='charmander'].btn {
+   background-color: #1ea1f1;
+   border-color: #1ea1f1;
+}
+.bt-bg {
+   width: 90%;
+   min-width: 200px;
+}
+.bt-med {
+   width: 45%;
+}
+.bt-sm {
+   width: 25%;
+}
+.bt-left-half {
+   border-radius: 15px 0 0 15px;
+   margin-right: -2px;
+   min-width: 75px;
+   max-width: 200px;
+}
+.bt-right-half {
+   border-radius: 0 15px 15px 0;
+   margin-left: -2px;
+   min-width: 75px;
+   max-width: 200px;
+}
+.button-over {
+   background-color: rgba(18, 136, 233, 1);
+}
+.button-click {
+   background-color: rgba(18, 136, 233, 0.7);
+   color: rgba(0, 0, 0, 1);
+}
+.flexer {
+   flex: 1 1 auto;
+   min-width: 0;
+   max-width: 100%;
+}
+.input-xsm {
+   width: 20% !important;
+   min-width: 65px !important;
+   max-width: 125px !important;
+}
+.input-sm {
+   width: 25% !important;
+   min-width: 65px !important;
+   max-width: 125px !important;
+}
+.input-med {
+   width: 32% !important;
+   min-width: 65px !important;
+   max-width: 125px !important;
+}
+.formBox {
+   margin: 0 auto;
+   max-width: 600px;
+   min-width: 300px;
+   height: 100%;
+   -ms-overflow-style: none; /* IE and Edge */
+   scrollbar-width: none; /* Firefox */
+}
+.formBox::-webkit-scrollbar {
+   display: none; /* Chrome, Safari, Opera */
+}
+.formElementBox {
+   position: relative;
+   width: 100%;
+}
+#formBox > div > textarea {
+   width: 90%;
+   height: 150px;
+   min-width: 200px;
+   border-radius: 15px;
+   border: 0.5px solid rgb(172, 169, 169);
+   padding: 5px;
+   padding-left: 10px;
+   resize: none;
+   line-height: 1.7;
+}
+#formBox > div > input:focus,
+#formBox > div > textarea:focus {
+   background-color: rgb(194, 248, 248);
+   border-color: #66afe9;
+   outline: 0;
+}
+#formBox {
+   margin: 0 auto;
+   display: grid;
+   grid-template-rows: auto auto auto;
+   grid-template-columns: auto;
+   width: 90%;
+   min-width: 200px;
+   max-width: 600px;
+}
+#actionMessage {
+   height: 20px;
+   line-height: 20px;
+   width: 300px;
+   min-width: 200px;
+   padding: 5px;
+   margin: 0 auto;
+   margin-bottom: 10px;
+   border-radius: 5px;
+   display: none;
+}
+.logInMeassage {
+   position: relative;
+   height: 35px;
+   font-size: 12px;
+   padding: 10px;
+   text-align: center;
+}
+.sentMsg {
+   color: var(--char-blue-1) !important;
+}
+.badMsg {
+   color: var(--char-orange-1);
+}
+.badMsgB::placeholder {
+   /* Chrome, Firefox, Opera, Safari 10.1+ */
+   color: red;
+   opacity: 1; /* Firefox */
+}
+.badMsgB::-webkit-input-placeholder {
+   color: red;
+}
+.badMsgB:-ms-input-placeholder {
+   /* Internet Explorer 10-11 */
+   color: red;
+}
+
+.badMsgB::-ms-input-placeholder {
+   /* Microsoft Edge */
+   color: red;
+}
+.badMsgB {
+   box-shadow: 0 0 5px rgba(222, 0, 0, 1);
+   padding: 3px 0px 3px 3px;
+   margin: 5px 1px 3px 0px;
+   border: 1px rgb(255, 0, 0) solid !important;
+}
+.badMsgB::before {
+   position: absolute;
+   top: 10px;
+   offset: 10px;
+}
+#formBox > div {
+   text-align: center;
+   margin-bottom: 12.5px;
+   margin-bottom: 12.5px;
+}
+.icon {
+   margin-right: 10px;
+   cursor: pointer;
+   display: inline-block;
+}
+@media screen and (max-width: 675px) {
+   .sidebar {
+      max-width: 100%;
+      width: 100%;
+      min-width: 293px;
+      height: fit-content;
+   }
+   .sideHeader:before {
+      content: 'Bottom';
+   }
+   .wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      background-color: rgba(255, 255, 255, 0);
+      margin-top: 5px;
+      min-height: 100px;
+      padding-left: 10px;
+   }
+   iframe {
+      margin: 0 auto;
+   }
+}

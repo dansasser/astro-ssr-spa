@@ -1,0 +1,124 @@
+---
+// the following imports are for the page list in the navigation and should be intergrated into the a mongodb database instead of a json file
+import Pages from '../../db/pages.json'
+import Social from '../../db/social.json'
+
+import Nav from '../components/navigation/Drawer-Nav.astro'
+import SideNav from '../components/navigation/Side-Nav.astro'
+import { getPageDetails } from '../functions/pageLoader'
+import Layout from '../layouts/Layout.astro'
+import { getSitedata } from '../functions/GetSiteData'
+const {
+   id: siteId,
+   name: siteName,
+   url: siteUrl,
+   header: siteHeader,
+   subHeader,
+   desc,
+   owner,
+   address,
+   phone,
+   email
+} = await getSitedata(Astro)
+const { line1, line2, city, state, postal_code, country } = address
+const page = (Astro.locals as { page?: string }).page || 'Cannot find page'
+const { description, keywords, name, id, url, hx_get, hx_url } =
+   getPageDetails(page)
+const push = hx_url.replace('/home', '/')
+console.log({ push: push })
+---
+
+<Layout
+   title={siteName}
+   theme='charmander'
+>
+   <section
+      id='pageWraper'
+      class='drawer'
+   >
+      <input
+         id='sideNav'
+         type='checkbox'
+         class='drawer-toggle'
+      />
+      <Nav
+         title={siteHeader}
+         background='bg-base-300'
+         pageList={Pages}
+         social={Social}
+      >
+         <div
+            class:list={[
+               'wrapper',
+               'relative',
+               'mt-1',
+               'top-[75px]',
+               'flex',
+               'flex-row',
+               'bg-transparent',
+               'min-h-[600px]',
+               'pr-5'
+            ]}
+         >
+            <aside
+               class:list={[
+                  'sidebar',
+                  'bg-primary',
+                  'rounded-lg',
+                  'text-primary-content',
+                  'text-justify',
+                  'p-3',
+                  'min-w-[200px]',
+                  'max-w-[350px]',
+                  'flex-[1]',
+                  'm-1',
+                  'z-10',
+                  'border-2',
+                  'border-gray-300',
+                  'shadow-md'
+               ]}
+            >
+               <div id='sideContent'>
+                  <h3
+                     class='sideHeader before:content-["Side"] after:content-["Content"]'
+                  >
+                     &nbsp;&nbsp;
+                  </h3>
+                  <p>
+                     This Content goes to the bottom on mobile device but on the
+                     side on laptop.
+                  </p>
+               </div>
+            </aside>
+            <main
+               id='mainContainer'
+               class:list={['relative', 'w-full', 'pl-1']}
+               hx-get={hx_get}
+               hx-push-url={push}
+               hx-trigger='load'
+               hx-swap='innerHTML'
+               hx-select='#content'
+            >
+               <h2>The site is loading...</h2>
+            </main>
+         </div>
+      </Nav>
+      <SideNav
+         title='City Packz'
+         background='bg-base-200'
+         pageList={Pages}
+         social={Social}
+      />
+   </section>
+</Layout>
+
+<!--
+<style>
+	main {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 1rem;
+		padding: 1rem;
+	}
+</style>
+-->

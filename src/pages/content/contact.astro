@@ -1,0 +1,110 @@
+---
+import { getPage } from '../../functions/checkReferer'
+import { getSitedata } from '../../functions/GetSiteData'
+const {
+   id: siteId,
+   name: siteName,
+   url: siteUrl,
+   header: siteHeader,
+   subHeader,
+   desc,
+   owner,
+   address,
+   phone,
+   email
+} = await getSitedata(Astro)
+const { line1, line2, city, state, postal_code, country } = address
+const page = getPage(Astro)
+import Form from '../../components/forms/Basic.Form.astro'
+import { getData } from '../../functions/GetData'
+const Theme: {
+   inputList: []
+   labelList: []
+} = await getData(`${process.env.API}themes/get/classes/blue_highlighter/`)
+---
+
+<html>
+   <head>
+      <title>{page}</title>
+   </head>
+   <body>
+      <section id='content'>
+         <h2
+            id='contactHeader'
+            class='ml-5'
+         >
+            CONTACT FORM
+         </h2>
+         <p
+            class='justify p-7 mb-5'
+            role='article'
+         >
+            Use the form below to inquire about products and shipping or if you
+            have questions or suggestions about the website
+         </p>
+
+         <Form
+            shawdow={true}
+            bgColor='bg-base-200'
+            borderColor='border-base-300'
+            hxSelect='actionMessage'
+            hxSwap='outerHTML'
+            hxTarget='actionMessage'
+            name='contactForm'
+            theme={Theme}
+            submit='/api/submit'
+            textAreas={[
+               {
+                  name: 'message',
+                  label: 'Your Message here...'
+               }
+            ]}
+            inputs={[
+               {
+                  name: 'name',
+                  type: 'text',
+                  label: 'Full Name'
+               },
+               {
+                  name: 'email',
+                  type: 'email',
+                  label: 'Email'
+               },
+               {
+                  name: 'subject',
+                  type: 'text',
+                  label: 'Subject'
+               }
+            ]}
+         />
+
+         <div
+            id='contactInfo'
+            class='m-5'
+         >
+            <h2 class='underline'>Owner's Contact Info</h2>
+            <p class='owner'>{owner}</p>
+            <p class='email text-xs'>
+               <a href=`mailto:${email}`>{email}</a>
+            </p>
+            <p class='address m-2'>
+               {line1}<br />{line2}<br />{city},&nbsp{state}&nbsp{
+                  postal_code
+               }<br />{country}
+            </p>
+            <p class='phone m-2'>
+               <a href=`tel:(preg_replace('/[^0-9]/', '', ${phone})`>{phone}</a>
+            </p>
+         </div>
+         <iframe
+            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51920.55104205987!2d-97.61121839571328!3d35.57754175119506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21b7045a8e7fb%3A0x6b17cbf4306059cb!2sVillage%2C%20OK%2073120!5e0!3m2!1sen!2sus!4v1692629012495!5m2!1sen!2sus'
+            width='90%'
+            height='300'
+            style='position:relitive;border:0'
+            allowfullscreen=''
+            loading='lazy'
+            referrerpolicy='no-referrer-when-downgrade'
+         ></iframe>
+      </section>
+   </body>
+</html>

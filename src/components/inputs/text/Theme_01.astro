@@ -1,0 +1,33 @@
+---
+interface Props {
+   label: string
+   width?: string
+   type: astroHTML.JSX.HTMLInputTypeAttribute
+   value?: string | number
+   theme: { inputList: []; labelList: [] }
+   name: string
+   step?: number
+}
+const { label, type, value, theme, name, step, width } = Astro.props
+const setWidth = width ? width : 'w-full'
+---
+
+<div class='p-2 text-center'>
+   <div class=`relative h-10 ${setWidth} min-w-[50px]`>
+      <input
+         type={type}
+         id={name}
+         name={name}
+         class:list={theme.inputList}
+         placeholder=' '
+         value={value}
+         step={step}
+      />
+      <label
+         for={name}
+         class:list={theme.labelList}
+      >
+         {label}
+      </label>
+   </div>
+</div>

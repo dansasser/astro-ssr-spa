@@ -1,0 +1,43 @@
+---
+interface Props {
+   title: string;
+   url?: string;
+   icon: string;
+   name?: string;
+}
+
+const { title, url, icon, name } = Astro.props;
+const controller = `${name}-dropdown`;
+const hyperscript = `on click toggle .hidden on #${controller} then toggle .hidden on #angleDown-${name} then toggle .hidden on #angleUp-${name}`;
+---
+
+<li>
+   <a
+      class="dropdown-trigger btn ms-1 bg-transparent flex items-center w-full p-2 transition duration-75 rounded-lg group border-none"
+      aria-controls={controller}
+      data-collapse-toggle={controller}
+      data-script={hyperscript}
+   >
+      <i class={icon}></i>
+      <span
+         class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap"
+         >{title}</span
+      >
+      <i
+         id={`angleDown-${name}`}
+         class="angleDown w-3 h-3 fa-solid fa-angle-down fa-fw"
+         aria-hidden="true"
+      ></i>
+      <i
+         id={`angleUp-${name}`}
+         class="angleUp w-3 h-3 fa-solid fa-angle-up fa-fw hidden"
+         aria-hidden="true"
+      ></i>
+   </a>
+   <ul
+      id={controller}
+      class="hidden py-2 space-y-2"
+   >
+      <slot />
+   </ul>
+</li>

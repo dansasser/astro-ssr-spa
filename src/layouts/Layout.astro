@@ -1,0 +1,109 @@
+---
+interface Props {
+   title: string
+   theme: string
+}
+
+const { title, theme } = Astro.props
+import '../../styles/global.css'
+import Footer from '../components/Footer.astro'
+const nonce = (Astro.locals as { nonce?: string }).nonce || 'Cannot find title'
+---
+
+<!doctype html>
+<html
+   lang='en'
+   class='bg-base-100'
+   data-theme={theme}
+>
+   <head>
+      <meta charset='UTF-8' />
+      <meta
+         name='description'
+         content='Astro description'
+      />
+      <meta
+         name='viewport'
+         content='width=device-width'
+      />
+      <link
+         rel='icon'
+         type='image/svg+xml'
+         href='/favicon.svg'
+      />
+      <link
+         rel='stylesheet'
+         type='text/css'
+         href='https://cdn.jsdelivr.net/gh/dansasser/public.cdn@16f4e93f833c09a7933ba2dba2ac3da92f5282c2/css/all.min.css'
+      />
+      <link
+         rel='stylesheet'
+         type='text/css'
+         href='https://cdn.jsdelivr.net/gh/dansasser/public.cdn@16f4e93f833c09a7933ba2dba2ac3da92f5282c2/css/fav5/all.min.css'
+      />
+      <link
+         href='https://cdn.jsdelivr.net/gh/dansasser/public.cdn@16f4e93f833c09a7933ba2dba2ac3da92f5282c2/css/flowbite.mini.css'
+         rel='stylesheet'
+      />
+      <script
+         is:inline
+         src='https://unpkg.com/htmx.org@2.0.0'
+         integrity='sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw'
+         crossorigin='anonymous'
+         defer
+      ></script>
+      <script
+         is:inline
+         src='https://unpkg.com/hyperscript.org@0.9.11'
+         defer
+      ></script>
+      <script
+         is:inline
+         src='/js/main.js'
+         defer
+      ></script>
+      <meta
+         name='generator'
+         content={Astro.generator}
+      />
+      <title>{title}</title>
+   </head>
+   <body id='body'>
+      <slot />
+      <Footer />
+   </body>
+</html>
+<script is:inline nonce={nonce}>
+   document.addEventListener('DOMContentLoaded', function () {
+      console.log('Added via nonce')
+   })
+</script>
+<style is:global>
+   :root {
+      --accent: 136, 58, 234;
+      --accent-light: 224, 204, 250;
+      --accent-dark: 49, 10, 101;
+      --accent-gradient: linear-gradient(
+         45deg,
+         rgb(var(--accent)),
+         rgb(var(--accent-light)) 30%,
+         white 60%
+      );
+   }
+   html {
+      font-family: system-ui, sans-serif;
+      background: #13151a;
+      background-size: 224px;
+   }
+   code {
+      font-family:
+         Menlo,
+         Monaco,
+         Lucida Console,
+         Liberation Mono,
+         DejaVu Sans Mono,
+         Bitstream Vera Sans Mono,
+         Courier New,
+         monospace;
+   }
+</style>

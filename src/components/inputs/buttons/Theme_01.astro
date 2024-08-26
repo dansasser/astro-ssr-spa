@@ -1,0 +1,60 @@
+---
+interface Props {
+   label: string
+   type?: 'submit' | 'reset' | 'button' | null | undefined
+   theme?: {
+      buttonList: string[]
+   }
+   submit?: string
+   select?: string
+}
+const { label, type, theme, select, submit } = Astro.props
+---
+
+<div
+   id='buttonDiv'
+   class='p-2 text-center'
+>
+   <button
+      id={label}
+      data-sitekey='6LfX4bsnAAAAAOX9b_pS0U6Ipxmmo9WoehvTTMTm'
+      data-action={type}
+      class:list={[
+         ' g-recaptcha',
+         'contactSubmit',
+         'w-full',
+         'max-w-[500px]',
+         'relative',
+         'top-inherit',
+         'inline-block',
+         'rounded-full',
+         'bg-accent',
+         'px-6',
+         'pb-2',
+         'pt-2.5',
+         'text-s',
+         'font-medium',
+         'uppercase',
+         'leading-normal',
+         'text-white',
+         'shadow-[0_4px_9px_-4px_#3b71ca]',
+         'transition',
+         'duration-150',
+         'ease-in-out',
+         'hover:bg-teal-600',
+         'hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]',
+         'focus:bg-teal-600',
+         'focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]',
+         'focus:outline-none',
+         'focus:ring-0',
+         'active:bg-teal-700',
+         'active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]',
+         'dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)]',
+         'dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]',
+         'dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]',
+         'dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]'
+      ]}
+   >
+      {label}
+   </button>
+</div>

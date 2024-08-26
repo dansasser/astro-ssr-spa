@@ -1,0 +1,19 @@
+---
+import { getPage } from '../../functions/checkReferer.ts'
+import Form from '../../components/forms/Basic.Form.astro'
+const page = getPage(Astro)
+import { getData } from '../../functions/GetData'
+const Theme: {
+   inputList: []
+   labelList: []
+} = await getData(`${process.env.API}themes/get/classes/blue_highlighter/`)
+---
+
+<html>
+   <head>
+      <title>{page}</title>
+   </head>
+   <body>
+      <h1>{page}</h1>
+   </body>
+</html>

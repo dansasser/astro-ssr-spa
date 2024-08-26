@@ -1,0 +1,142 @@
+---
+// the following imports are for the page list in the navigation and should be intergrated into the a mongodb database instead of a json file
+import Pages from '../../db/pages.json' 
+import Social from '../../db/social.json'
+
+import { Icon } from 'astro-icon/components'
+import faico from '../utils/fa-icons.json'
+import fav5 from '../utils/fa-v5-icons.json'
+import ico from '../utils/icons.json'
+import Nav from '../components/navigation/Drawer-Nav.astro'
+import SideNav from '../components/navigation/Side-Nav.astro'
+import Layout from '../layouts/Layout.astro'
+const title = (Astro.locals as { title?: string }).title || 'Cannot find title'
+const tagline =
+   (Astro.locals as { tagline?: string }).tagline || 'Cannot find tagline'
+const icons = ico.icons
+const iconArray: string[] = []
+interface IconProps {
+   name: string
+   style: string
+}
+Object.keys(icons).forEach((key) => {
+   const icon = `mdi:${key}`
+   iconArray.push(icon)
+})
+const faiconArray: IconProps[] = []
+Object.keys(faico).forEach((key) => {
+   const icon = `fa-${key}`
+   const style = `fa-${(faico as any)[key].styles[0]}`
+   const iconProps = {
+      name: icon,
+      style: style
+   }
+   faiconArray.push(iconProps)
+})
+
+const fav5Array: IconProps[] = []
+const faFunction = (array: IconProps[], list: any) => {
+   Object.keys(list).forEach((key) => {
+      const style = `${key} fa-fw` // Get the style
+      const icon = key.slice(3).trim() // Get the icon
+      const iconProps = {
+         name: icon,
+         style: style
+      }
+      array.push(iconProps)
+   })
+   return array
+}
+const results = faFunction(fav5Array, fav5)
+const page = (Astro.locals as { page?: string }).page || 'Cannot find page'
+---
+
+<html>
+   <head>
+      <title>{`This is a ${page} page`}</title>
+   </head>
+   <body>
+      <div id='content'>
+         <Layout
+            title='Welcome to City Packz'
+            theme='charmander'
+         >
+            <section
+               id='pageWraper'
+               class='drawer'
+            >
+               <input
+                  id='sideNav'
+                  type='checkbox'
+                  class='drawer-toggle'
+               />
+               <Nav
+                  title='City Packz'
+                  background='bg-base-200'
+                  pageList={Pages}
+                  social={Social}
+               >
+                  <main>
+                     <h1>{title}</h1>
+                     <p>
+                        Welcome to {title}. {tagline}
+                     </p>
+
+                     <h2>Font Awesome Icons</h2>
+                     <ul>
+                        {
+                           faiconArray.map((icon, index) => (
+                              <li>
+                                 <Icon name={icon.name.replace('fa-', '')} />
+                                 {icon.name}
+                              </li>
+                           ))
+                        }
+                     </ul>
+                     <h2>Font Awesome 5 Pro Icons</h2>
+                     <ul>
+                        {
+                           results.map((icon, index) => (
+                              <li>
+                                 <i class={icon.style} />
+                                 {icon.style.replace('fa-fw', '').trim()}
+                              </li>
+                           ))
+                        }
+                     </ul>
+
+                     <h2>Material Design Icons</h2>
+                     <ul>
+                        {
+                           iconArray.map((icon, index) => (
+                              <li>
+                                 <Icon name={icon} />
+                                 {icon}
+                              </li>
+                           ))
+                        }
+                     </ul>
+                  </main>
+               </Nav>
+               <SideNav
+                  title='City Packz'
+                  background='bg-base-100'
+                  pageList={Pages}
+                  social={Social}
+               />
+            </section>
+         </Layout>
+      </div>
+   </body>
+</html>
+
+<!--
+<style>
+	main {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 1rem;
+		padding: 1rem;
+	}
+</style>
+-->

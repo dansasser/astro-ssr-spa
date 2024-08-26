@@ -1,0 +1,9 @@
+{
+  "resources": [
+    "http://localhost:3000"
+  ],
+  "auth": {
+    "username": "username",
+    "password": "password"
+  }
+}

@@ -1,0 +1,216 @@
+---
+import { Icon } from 'astro-icon/components'
+import type { PageData } from '../../../interfaces/PageData.ts'
+import type { SocialData } from '../../../interfaces/SocialData.ts'
+import SideChild from './Side-Child.astro'
+import SideNoChild from './Side-No-Child.astro'
+import SideWithChild from './Side-With-Child.astro'
+
+interface Props {
+   title: string
+   background: string
+   pageList: PageData
+   social: SocialData
+}
+const { title, background, pageList, social } =
+   Astro.props
+const pages = pageList.pages
+---
+
+<div class='drawer-side z-10'>
+   <label
+      for='sideNav'
+      aria-label='close sidebar'
+      style='position: relative;'
+      class='drawer-overlay'
+   ></label>
+   <aside
+      class=`h-screen sticky top-0 flex flex-col ${background} overflow-y-auto`
+   >
+      <!-- Header -->
+      <div class='flex justify-between p-2'>
+         <!-- Logo -->
+         <a class='btn btn-ghost text-lg'>
+            <i class='far fa-dice-d20 fa-fw'></i>
+            {title}
+         </a>
+
+         <a
+            class='btn btn-ghost btn-circle text-lg'
+         >
+            <i class='fa-solid fa-gear'></i>
+         </a>
+      </div>
+
+      <!-- Body -->
+      <div
+         class='flex flex-col border-y border-base-300 px-6 pt-4 grow'
+      >
+         <!-- Search input -->
+         <input
+            id='search'
+            name='search'
+            class='input input-bordered'
+            placeholder='Search...'
+         />
+
+         <!-- Links -->
+         <div
+            class='flex flex-col divide-y divide-base-300'
+         >
+            <ul class='menu px-0 py-4'>
+               {
+                  pages.map((page) => {
+                     if (page.parent === 'none') {
+                        if (
+                           page.hasChildren ===
+                           true
+                        ) {
+                           return (
+                              <SideWithChild
+                                 title={
+                                    page.title
+                                 }
+                                 icon={page.icon}
+                                 name={page.name}>
+                                 {pages.map(
+                                    (child) => {
+                                       if (
+                                          child.parent ===
+                                          page.name
+                                       ) {
+                                          return (
+                                             <SideChild
+                                                name={
+                                                   page.name
+                                                }
+                                                title={
+                                                   child.title
+                                                }
+                                                url={
+                                                   child.url
+                                                }
+                                                icon={
+                                                   child.icon
+                                                }
+                                             />
+                                          )
+                                       }
+                                       return null
+                                    },
+                                 )}
+                              </SideWithChild>
+                           )
+                        } else {
+                           return (
+                              <SideNoChild
+                                 title={
+                                    page.title
+                                 }
+                                 url={page.url}
+                                 icon={page.icon}
+                              />
+                           )
+                        }
+                     }
+                     return null
+                  })
+               }
+            </ul>
+
+            <ul class='menu px-0 py-4'>
+               {
+                  social.accounts.map(
+                     (account) => (
+                        <li>
+                           <a
+                              href={account.url}
+                              target='_blank'>
+                              <i aria-hidden='true'>
+                                 <Icon
+                                    name={
+                                       account.name
+                                    }
+                                 />
+                              </i>
+                              {account.title}
+                           </a>
+                        </li>
+                     ),
+                  )
+               }
+            </ul>
+
+            <ul class='menu px-0 py-4'>
+               <li>
+                  <a>
+                     <i
+                        class='fa-solid fa-truck fa-fw'
+                     ></i>
+                     Delivers
+                  </a>
+               </li>
+               <li>
+                  <a>
+                     <i
+                        class='fa-solid fa-box fa-fw'
+                     ></i>
+                     Orders
+                  </a>
+               </li>
+               <li>
+                  <a>
+                     <i
+                        class='fa-solid fa-store fa-fw'
+                     ></i>
+                     Products
+                  </a>
+               </li>
+               <li>
+                  <a>
+                     <i
+                        class='fa-solid fa-users-gear fa-fw'
+                     ></i>
+                     Cutomers
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </div>
+
+      <!-- Footer -->
+      <div
+         class='flex justify-between items-center p-2'
+      >
+         <a class='btn'>
+            <img
+               alt='Profile'
+               src='/assets/img/dan.png'
+               class='w-8 rounded-full'
+            />
+
+            <div class='flex flex-col text-start'>
+               <span class='font-bold'
+                  >User name</span
+               >
+               <span class='text-sm text-accent'
+                  >user@email.com</span
+               >
+            </div>
+         </a>
+
+         <a
+            class='btn btn-error btn-sm mr-3'
+            title='Logout'
+         >
+            <i class='fa-solid fa-door-open'></i>
+         </a>
+      </div>
+   </aside>
+</div>
+
+<style>
+   .menu li {
+      margin-bottom: 5px;
+   }
+</style>
