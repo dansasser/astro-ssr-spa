@@ -65,6 +65,7 @@ To get started with this template, you can use either Bun or npm. Choose the met
       or
       ```bash
       npm i astro-ssr-spa
+      cp -r node_modules/astro-ssr-spa/* .
       ```
 
 2. **Install Dependencies**: Set up the project dependencies using your preferred package manager:
