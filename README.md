@@ -1,9 +1,5 @@
 ## Astro with HTMX, Daisy UI, Tailwind CSS, and MongoDB Template by DTS
 
-** warning **
-
--This project is currently being uploaded-
-
 ##
 
 This [Astro single-page application (SPA) template](https://github.com/dansasser/astro-ssr-spa) is designed to help you build robust and scalable web applications quickly. It includes integrated support for [HTMX](https://htmx.org/), [Daisy UI](https://daisyui.com/), and [Tailwind CSS](https://tailwindcss.com/) to create dynamic, responsive user interfaces. Perfect for building [e-commerce sites](https://github.com/dansasser/astro-ssr-spa), blogs, or portfolios, this template features comprehensive session management with [mongo-connect](https://www.npmjs.com/package/mongo-connect) and MongoDB integration, providing a secure and efficient development environment.
