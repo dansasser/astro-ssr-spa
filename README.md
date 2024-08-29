@@ -488,7 +488,7 @@ Explore the **Astro with HTMX, Daisy UI, Tailwind CSS, and MongoDB Template by D
 -  [Daisy UI Documentation](https://daisyui.com/docs/) – Reference for utilizing Daisy UI components in your UI designs.
 -  [Tailwind CSS Documentation](https://tailwindcss.com/docs) – Detailed guide to using Tailwind CSS for building responsive designs.
 -  [MongoDB Community Edition](https://www.mongodb.com/try/download/community) – Official page to download and install the MongoDB Community Edition for local development.
-
+- [Dev.to](https://dev.to/dansasser/supercharge-your-e-commerce-site-with-astro-ssr-spa-template-1578) a link to our current article about Astro SSR SPA
 ---
 
 ## Contributing
