@@ -52,7 +52,7 @@ To get started with this template, you can use either Bun or npm. Choose the met
 
    -  With Bun:
       ```bash
-      bunx create-astro@latest DTS --template dansasser/astro-ssr-spa
+      bun create-astro@latest DTS --template dansasser/astro-ssr-spa
       ```
    -  With npm:
       ```bash
