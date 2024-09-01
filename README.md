@@ -1,6 +1,8 @@
 ## Astro with HTMX, Daisy UI, Tailwind CSS, and MongoDB Template by DTS
 
-##
+Welcome to the official repository for the Astro SSR SPA Template! For detailed documentation, demos, and the latest updates, visit our official website: [astro-ssr-spa.org](https://astro-ssr-spa.org).
+
+[![Official Website](https://img.shields.io/badge/Official%20Page-astro--ssr--spa.org-blue)](https://astro-ssr-spa.org)
 
 This [Astro single-page application (SPA) template](https://github.com/dansasser/astro-ssr-spa) is designed to help you build robust and scalable web applications quickly. It includes integrated support for [HTMX](https://htmx.org/), [Daisy UI](https://daisyui.com/), and [Tailwind CSS](https://tailwindcss.com/) to create dynamic, responsive user interfaces. Perfect for building [e-commerce sites](https://github.com/dansasser/astro-ssr-spa), blogs, or portfolios, this template features comprehensive session management with [mongo-connect](https://www.npmjs.com/package/mongo-connect) and MongoDB integration, providing a secure and efficient development environment.
 
@@ -21,6 +23,7 @@ This [Astro single-page application (SPA) template](https://github.com/dansasser
 -  [Why Astro DTS](#-Why-Choose-This-Template)
 
 ### **Key Features**
+Explore the full list of features below and see examples on our [official website](https://astro-ssr-spa.org/#features).
 
 -  **Astro Single-Page Application Template**: This template leverages [Astro](https://astro.build/) for building a [single-page application](https://github.com/dansasser/astro-ssr-spa) with server-side rendering (SSR) capabilities, ensuring a fast and optimized user experience.
 
@@ -46,7 +49,8 @@ This Astro template is ideal for various types of web projects, including:
 
 ## 🛠️ Installation and Usage
 
-To get started with this template, you can use either Bun or npm. Choose the method that best fits your environment:
+To get started with the Astro SSR SPA Template, follow the instructions below or check out our [Getting Started Guide](https://astro-ssr-spa.org/#getting-started) on the official website.
+For this project you can use either Bun or npm. Choose the method that best fits your environment:
 
 1. **Initialize the Project**: Create a new project using the Astro CLI:
 
@@ -493,7 +497,7 @@ Explore the **Astro with HTMX, Daisy UI, Tailwind CSS, and MongoDB Template by D
 
 ## Contributing
 
-We welcome contributions to this project! If you have suggestions, bug reports, or would like to contribute code, please follow these steps: (Still need to add this part)
+Contributions are welcome! For guidelines and information, please visit the [Contributing section](https://astro-ssr-spa.org/#contributing) on our official website.
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
@@ -502,6 +506,10 @@ We welcome contributions to this project! If you have suggestions, bug reports, 
 5. Create a new Pull Request.
 
 For more details, check out our [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+## Contact
+
+For more information or support, visit our [official website](https://astro-ssr-spa.org) or contact us directly at [contact@dansasser.me](mailto:contact@dansasser.me).
 
 ## License
 
