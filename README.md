@@ -1,4 +1,4 @@
-## Astro with HTMX, Daisy UI, Tailwind CSS, and MongoDB Template by DTS
+## Astro SSR SPA with HTMX, Daisy UI, Tailwind CSS, and MongoDB Template by DTS
 
 ![Screenshot 2024-09-01 104703](https://github.com/user-attachments/assets/a4ab598d-4714-4447-8305-4a7e56d9455f)
 
@@ -23,7 +23,7 @@ This [Astro single-page application (SPA) template](https://github.com/dansasser
 -  [Resources](#Resources)
 -  [Contribute](#Contributing)
 -  [License](#License)
--  [Why Astro DTS](#-Why-Choose-This-Template)
+-  [Why Astro SSR SPA](#-Why-Choose-This-Template)
 
 ### **Key Features**
 Explore the full list of features below and see examples on our [official website](https://astro-ssr-spa.org/#features).
@@ -480,7 +480,7 @@ All commands are run from the root of the project, from a terminal:
 
 -  **Secure and Scalable**: Manage sessions securely and scale your app with flexible database options.
 
-Explore the **Astro with HTMX, Daisy UI, Tailwind CSS, and MongoDB Template by DTS** to build modern, high-performance web applications. Get started today and harness the best tools in web development to create exceptional user experiences.
+Explore the **Astro SSR SPA with HTMX, Daisy UI, Tailwind CSS, and MongoDB Template by DTS** to build modern, high-performance web applications. Get started today and harness the best tools in web development to create exceptional user experiences.
 
 ---
 
