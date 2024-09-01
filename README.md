@@ -8,9 +8,6 @@ Welcome to the official repository for the Astro SSR SPA Template! For detailed 
 [![Official Website](https://img.shields.io/badge/Official%20Page-astro--ssr--spa.org-blue)](https://astro-ssr-spa.org)
 
 This [Astro single-page application (SPA) template](https://github.com/dansasser/astro-ssr-spa) is designed to help you build robust and scalable web applications quickly. It includes integrated support for [HTMX](https://htmx.org/), [Daisy UI](https://daisyui.com/), and [Tailwind CSS](https://tailwindcss.com/) to create dynamic, responsive user interfaces. Perfect for building [e-commerce sites](https://github.com/dansasser/astro-ssr-spa), blogs, or portfolios, this template features comprehensive session management with [mongo-connect](https://www.npmjs.com/package/mongo-connect) and MongoDB integration, providing a secure and efficient development environment.
-![astro-ssr-spa-fullscreen](https://github.com/user-attachments/assets/5b0f1773-20c8-4fbe-9a06-17ad1eca1fbd)
-![astro-ssr-spa-resposive](https://github.com/user-attachments/assets/ce662b3f-da7c-4044-b49f-804267ea14e4)
-
 
 ## Table of Contents
 
