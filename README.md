@@ -1,6 +1,4 @@
-<h1 align=center">Astro SSR SPA Template</h1>
-
-<h2 align="center">with HTMX, Daisy UI, Tailwind CSS, and MongoDB <br /> by <br /> DTS</h2>
+<h1 align=center">Astro SSR SPA Template<br /><h2 align="center">with HTMX, Daisy UI, Tailwind CSS, and MongoDB <br /> by <br /> DTS</h2></h1>
 
 ---
 
