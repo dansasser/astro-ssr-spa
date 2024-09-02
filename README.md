@@ -1,5 +1,7 @@
 ## Astro SSR SPA with HTMX, Daisy UI, Tailwind CSS, and MongoDB Template by DTS
 
+_This repository is constantly being updated, so check back often for updates!_
+
 ![Screenshot 2024-09-01 104703](https://github.com/user-attachments/assets/a4ab598d-4714-4447-8305-4a7e56d9455f)
 
 
