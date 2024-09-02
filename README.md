@@ -1,7 +1,7 @@
 <h1 align="center">Astro SSR SPA Template</h1>
-<p align="center">with HTMX, Daisy UI, Tailwind CSS, and MongoDB <br /> by <br /> DTS
+<p align="center">with HTMX, Daisy UI, Tailwind CSS, and MongoDB <br /> by <br /> DTS</p>
 
-[![Official Website](https://img.shields.io/badge/Official%20Page-astro--ssr--spa.org-blue)](https://astro-ssr-spa.org) [![Licence](https://img.shields.io/badge/Licence-Apache%202.0-green)](https://github.com/dansasser/astro-ssr-spa/blob/main/LICENSE) [![Package](https://img.shields.io/badge/NPM-v2.0.3-blue)](https://www.npmjs.com/package/astro-ssr-spa/v/2.0.3)
+:[![Official Website](https://img.shields.io/badge/Official%20Page-astro--ssr--spa.org-blue)](https://astro-ssr-spa.org) [![Licence](https://img.shields.io/badge/Licence-Apache%202.0-green)](https://github.com/dansasser/astro-ssr-spa/blob/main/LICENSE) [![Package](https://img.shields.io/badge/NPM-v2.0.3-blue)](https://www.npmjs.com/package/astro-ssr-spa/v/2.0.3):
 
 
 _This repository is constantly being updated, so check back often for updates!_
