@@ -64,11 +64,11 @@ For this project you can use either Bun or npm. Choose the method that best fits
 
    -  With Bun:
       ```bash
-      bun create-astro@latest DTS --template dansasser/astro-ssr-spa
+      bun create-astro@latest -- --template dansasser/astro-ssr-spa
       ```
    -  With npm:
       ```bash
-      npm create-astro@latest DTS --template dansasser/astro-ssr-spa
+      npm create-astro@latest -- --template dansasser/astro-ssr-spa
       ```
       or
       ```bash
