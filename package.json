@@ -1,7 +1,7 @@
 {
   "name": "astro-ssr-spa",
   "type": "module",
-  "author": "Dan Sasser <contact@dansasser.me>",
+  "author": "Dan Sasser <contact@gorombo.com>",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
