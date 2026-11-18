@@ -520,7 +520,7 @@ For more details, check out our [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## Contact
 
-For more information or support, visit our [official website](https://astro-ssr-spa.org) or contact us directly at [contact@dansasser.me](mailto:contact@dansasser.me).
+For more information or support, visit our [official website](https://astro-ssr-spa.org) or contact us directly at [contact@gorombo.com](mailto:contact@gorombo.com).
 
 ## License
 
